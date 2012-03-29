@@ -5,3 +5,7 @@ compile:
 
 test:
 	echo "val _ = OS.Process.exit OS.Process.success" | sml -m bq.cm SmlUnit.sml DcTest.sml
+
+clean:
+	rm -Rf ./.cm
+	rm bqbin*
