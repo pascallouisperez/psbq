@@ -1,0 +1,43 @@
+\contentsline {chapter}{Acknowledgments}{1}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{4}{}%
+\contentsline {section}{\numberline {1.1}Expressiveness}{5}{}%
+\contentsline {section}{\numberline {1.2}Row Polymorphism}{6}{}%
+\contentsline {chapter}{\numberline {2}Syntax}{7}{}%
+\contentsline {section}{\numberline {2.1}Expressions}{7}{}%
+\contentsline {section}{\numberline {2.2}Monomorphic Types}{7}{}%
+\contentsline {section}{\numberline {2.3}Polymorphic Types}{8}{}%
+\contentsline {section}{\numberline {2.4}Environment}{9}{}%
+\contentsline {section}{\numberline {2.5}Base Types}{9}{}%
+\contentsline {section}{\numberline {2.6}Subtyping}{9}{}%
+\contentsline {section}{\numberline {2.7}Meaning of Constraints}{11}{}%
+\contentsline {section}{\numberline {2.8}Interpretation of Type Schemes}{13}{}%
+\contentsline {chapter}{\numberline {3}Type Inference}{17}{}%
+\contentsline {section}{\numberline {3.1}Typing Rules}{17}{}%
+\contentsline {subsection}{\numberline {3.1.1}Syntax Directed Rules}{17}{}%
+\contentsline {subsection}{\numberline {3.1.2}Declarative Rules}{19}{}%
+\contentsline {subsection}{\numberline {3.1.3}Type Systems}{19}{}%
+\contentsline {section}{\numberline {3.2}Properties}{20}{}%
+\contentsline {chapter}{\numberline {4}Conservative Extension of Hindley/Milner}{29}{}%
+\contentsline {section}{\numberline {4.1}Survey of Hindley/Milner}{29}{}%
+\contentsline {subsection}{\numberline {4.1.1}Hindley/Milner Typing Rules}{30}{}%
+\contentsline {section}{\numberline {4.2}Comparison}{30}{}%
+\contentsline {chapter}{\numberline {5}More on Constraints}{33}{}%
+\contentsline {section}{\numberline {5.1}Efficiency of Constraint Solving}{33}{}%
+\contentsline {subsubsection}{Poset with Arrow}{34}{}%
+\contentsline {subsection}{\numberline {5.1.1}Poset with Records}{36}{}%
+\contentsline {subsection}{\numberline {5.1.2}Poset with Arrow and Record}{38}{}%
+\contentsline {section}{\numberline {5.2}Satisfiability of Constraints}{39}{}%
+\contentsline {subsection}{\numberline {5.2.1}Distance Consistency}{40}{}%
+\contentsline {chapter}{\numberline {6}Conclusion}{43}{}%
+\contentsline {section}{\numberline {6.1}Related Work}{43}{}%
+\contentsline {section}{\numberline {6.2}Future Work}{44}{}%
+\contentsline {section}{\numberline {6.3}Conclusion}{46}{}%
+\contentsline {chapter}{\numberline {A}Typing Examples}{48}{}%
+\contentsline {chapter}{\numberline {B}Type Derivations Examples}{49}{}%
+\contentsline {section}{\numberline {B.1}Identity Function}{49}{}%
+\contentsline {section}{\numberline {B.2}Identity Function applied to a Record}{49}{}%
+\contentsline {section}{\numberline {B.3}Increment Function}{50}{}%
+\contentsline {section}{\numberline {B.4}Selection Function}{50}{}%
+\contentsline {section}{\numberline {B.5}Apply Function ($f$ then $d$)}{50}{}%
+\contentsline {section}{\numberline {B.6}Apply Function ($d$ then $f$)}{51}{}%
+\contentsline {chapter}{\numberline {C}Notations}{52}{}%

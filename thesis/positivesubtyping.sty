@@ -1,0 +1,221 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{txfonts}
+\usepackage{theorem}
+\usepackage[margin=3cm]{geometry}
+\usepackage{mathpartir}
+\usepackage[all]{xy}
+%\usepackage{epsfig}
+\usepackage[pdftex]{color,graphicx}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{pifont}
+
+% LaTeX 2e
+\def\ensuretext{\textrm}
+
+% no images...
+%\renewcommand{\includegraphics}[1]{}
+
+% commands
+\newcommand{\lrp}[1]{\left({#1}\right)}
+\newcommand{\eqg}{\Coloneqq}
+\newcommand{\Hole}{[\cdot]}
+\def\conf{\mathop{\rm conf}\nolimits}
+\def\dom{\mathop{\rm dom}\nolimits}
+\def\range{\mathop{\rm range}\nolimits}
+\def\sup{\mathop{\rm sup}\nolimits}
+\def\pr{\mathop{\rm pr}\nolimits}
+\def\ftv{\mathop{\rm ftv}\nolimits}
+\def\fv{\mathop{\rm fv}\nolimits}
+\def\unify{\mathop{\rm unify}\nolimits}
+\def\extract{\ensuremath{\mathop{\rm extract}\nolimits}}
+\def\distinct{\mathop{\rm \#}\nolimits}
+\def\pound{\mathrel{\#}}
+\newcommand{\meet}{\wedge}
+\newcommand{\join}{\vee}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\card}[1]{\abs{#1}}
+\newcommand{\nCr}[2]{\left(\begin{array}{c}#2 \\ #1\end{array}\right)}
+%\newcommand{\upclosure}{\uparrow}
+\def\upclosure{\mathop{\rm\uparrow}\nolimits}
+\def\downclosure{\mathop{\rm\downarrow}\nolimits}
+\newcommand{\sub}[2]{\left[{#1}/{#2}\right]}
+\def\carriagereturn{\Pisymbol{psy}{191}}
+
+% conversions
+\newcommand{\convert}[1]{\llbracket{#1}\rrbracket}
+\newcommand{\interp}[2]{\convert{#2}_{#1}}
+\newcommand{\sinterp}[1]{\interp{\phi}{#1}}
+\newcommand{\ccheck}[1]{\convert{#1}_\textsf{check}}
+\newcommand{\csimplify}[1]{\convert{#1}_\textsf{sim}}
+\newcommand{\mltobq}[1]{\convert{#1}_{\textsf{H/M}\rhd\textsf{BQ}}}
+
+% sets of type terms
+\newcommand{\ATypes}{\mathcal{A}}
+\newcommand{\Types}{\mathcal{T}}
+\newcommand{\TVars}{\mathcal{V}}
+\newcommand{\GTypes}{\mathcal{M}}
+\newcommand{\Labels}{\mathcal{L}}
+\newcommand{\Schemes}{\mathcal{S}}
+
+
+\newcommand{\type}[1]{\textsf{#1}}
+\newcommand{\basetype}{\type{B}}
+\newcommand{\ptype}[2]{\forall #1.#2}
+\newcommand{\Base}{\mathcal{B}}
+\newcommand{\fun}{\rightarrow}
+\newcommand{\Int}{\textsf{Int}}
+\newcommand{\Char}{\textsf{Char}}
+\newcommand{\Bool}{\textsf{Bool}}
+\newcommand{\Nil}{\textsf{Nil}}
+\newcommand{\true}{\textsf{true}}
+\newcommand{\false}{\textsf{false}}
+\newcommand{\True}{\textsf{true}}
+\newcommand{\False}{\textsf{false}}
+\newcommand{\Twice}{\textsf{twice}}
+\newcommand{\Record}{\textsf{record}}
+\newcommand{\Sel}{\textsf{sel}}
+\newcommand{\Let}[3]{\textsf{let }{#1}={#2}\textsf{ in }{#3}}
+
+\newcommand{\irname}[1]{\TirName{\textsf{(#1)}}}
+\newcommand{\infrule}[3]{\phantom{{#1}}\inferrule*[Left={\ensuretext{#1}}]{#2}{#3}}
+\newcommand{\infrules}[3]{\inferrule*{#2}{#3}}
+\newcommand{\entail}{\vdash}
+\newcommand{\entails}{\vdash}
+\newcommand{\entailsml}{\vdash_\textsf{H/M}}
+\newcommand{\entailsm}{\vdash_\textsf{m}}
+\newcommand{\entailsp}{\vdash_\textsf{p}}
+\newcommand{\entailinner}{\entailsm}
+\newcommand{\entailouter}{\entailsp}
+\newcommand{\entailsdc}{\vdash_\textsf{d}}
+
+\newcommand{\csat}{\models}
+\newcommand{\cimplies}{\mathrel|\models}
+\newcommand{\cissat}{\mathrel|\joinrel\equiv}
+
+%\newcommand{\subtype}{<:}
+\def\subtype{\mathinner{\mkern1mu\vbox{\hbox{$<$}}\mkern1mu\raise.43\p@\vbox{\kern-.7\p@\hbox{:}}}}
+\def\rsubtype{:>}
+\def\nsubtype{\mathchoice{\Xnsubtype\displaystyle\textstyle{/}}
+             {\Xnsubtype\textstyle\scriptstyle{/}}
+             {\Xnsubtype\scriptstyle\scriptscriptstyle{/}}
+             {\Xnsubtype\scriptscriptstyle\scriptscriptstyle{/}}\!\subtype}
+\def\Xnsubtype#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\subtype}$}\vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\newcommand{\instance}{\preceq}
+
+% expressions
+\newcommand{\eapp}[2]{{#1} \ {#2}}
+\newcommand{\elet}[3]{\textsf{let } {#1} = {#2} \textsf{ in } {#3}}
+\newcommand{\esel}[2]{{#1}.{#2}}
+
+% type systems
+\newcommand{\BQ}{\ensuretext{BQ}\xspace}
+\newcommand{\BQa}{\ensuretext{BQ$^{abs}$}\xspace}
+\newcommand{\BQsa}{\ensuretext{BQ$^{sub,abs}$}\xspace}
+
+% efficiency of constraint solving
+\newcommand{\poset}[1]{\left<{#1}\right>}
+\newcommand{\rec}{{\{\}}}
+
+% rules name
+\newcommand{\rulename}[1]{\irname{#1}\xspace}
+
+\newcommand{\stoptype}{\rulename{BQ-s-top}}
+\newcommand{\sref}{\rulename{BQ-s-ref}}
+\newcommand{\sfun}{\rulename{BQ-s-fun}}
+\newcommand{\srecw}{\rulename{BQ-s-rec-width}}
+\newcommand{\srecd}{\rulename{BQ-s-rec-depth}}
+\newcommand{\srec}{\rulename{BQ-s-rec}}
+\newcommand{\senv}{\rulename{BQ-s-env}}
+
+\newcommand{\ctrue}{\rulename{BQ-c-true}}
+\newcommand{\ceq}{\rulename{BQ-c-eq}}
+\newcommand{\csub}{\rulename{BQ-c-sub}}
+\newcommand{\cand}{\rulename{BQ-c-and}}
+\newcommand{\cexists}{\rulename{BQ-c-exists}}
+
+\def\sdrules{\rulename{BQ-sd}}
+\newcommand{\sdbase}{\rulename{BQ-sd-base}}
+\newcommand{\sdfin}{\rulename{BQ-sd-fin}}
+\newcommand{\sdstart}{\rulename{BQ-sd-start}}
+\newcommand{\sduse}{\rulename{BQ-sd-use}}
+\newcommand{\sdvar}{\rulename{BQ-sd-var}}
+\newcommand{\sdlet}{\rulename{BQ-sd-let}}
+\newcommand{\sdsel}{\rulename{BQ-sd-sel}}
+\newcommand{\sdabs}{\rulename{BQ-sd-abs}}
+\newcommand{\sdapp}{\rulename{BQ-sd-app}}
+\newcommand{\sdrec}{\rulename{BQ-sd-rec}}
+
+\newcommand{\decabs}{\rulename{BQ-dec-abs}}
+\newcommand{\decsub}{\rulename{BQ-dec-sub}}
+
+\newcommand{\mlbase}{\rulename{H/M-base}}
+\newcommand{\mlvar}{\rulename{H/M-var}}
+\newcommand{\mlabs}{\rulename{H/M-abs}}
+\newcommand{\mlapp}{\rulename{H/M-app}}
+\newcommand{\mllet}{\rulename{H/M-let}}
+\newcommand{\mlgen}{\rulename{H/M-gen}}
+\newcommand{\mlinst}{\rulename{H/M-inst}}
+
+\newcommand{\hmxstart}{\rulename{HMX-start}}
+
+\newcommand{\eqbase}{\rulename{EQ-base}}
+\newcommand{\eqarrow}{\rulename{EQ-arrow}}
+
+\newcommand{\exbase}{\rulename{EX-base}}
+\newcommand{\exarrow}{\rulename{EX-arrow}}
+
+\newcommand{\dcax}{\rulename{DC-ax}}
+\newcommand{\dcsymm}{\rulename{DC-symm}}
+\newcommand{\dcdual}{\rulename{DC-dual}}
+\newcommand{\dcjoin}{\rulename{DC-join}}
+\newcommand{\dcsubfun}{\rulename{DC-fun}}
+\newcommand{\dcsubrec}{\rulename{DC-rec}}
+
+% some more symbols
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\coll}[2]{\set{{#1}\left|\ {#2}\right.}}
+\newcommand{\class}[1]{\lbrack#1\rbrack}
+\newcommand{\equivt}{\sim}
+%\newcommand{\equivt}{\sim_t}
+\newcommand{\equivs}{\sim_s}
+\newcommand{\atomicposet}{\left<C,\subtype_C\right>}
+
+% theorems, lemmas
+\newtheorem{dfn}{Definition}[section]
+\newtheorem{thm}{Theorem}[section]
+{\theorembodyfont{\rmfamily}
+ \newtheorem{proof}{Proof}}
+\renewcommand{\theproof}{}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{exa}{Example}[section]
+{\theorembodyfont{\rmfamily}
+ \newtheorem{note}{Note}}
+\renewcommand{\thenote}{}
+\newenvironment{indcase}[1]{\newline\noindent\framebox{#1}}{\newline}
+\newenvironment{innerindcase}[1]{\newline\noindent [#1]~}{\newline}
+
+\newcommand{\dfnlabel}[1]{\label{dfn:#1}}
+\newcommand{\dfnref}[1]{(definition~\ref{dfn:#1})}
+\newcommand{\thmlabel}[1]{\label{thm:#1}}
+\newcommand{\thmref}[1]{(theorem~\ref{thm:#1})}
+\newcommand{\proofthmref}[1]{theorem \ref{thm:#1}}
+\newcommand{\lemmalabel}[1]{\label{lemma:#1}}
+\newcommand{\lemmaref}[1]{(lemma~\ref{lemma:#1})}
+\newcommand{\prooflemmaref}[1]{lemma \ref{lemma:#1}}
+\newcommand{\corlabel}[1]{\label{cor:#1}}
+\newcommand{\corref}[1]{(corollary~\ref{cor:#1})}
+\newcommand{\proofcorref}[1]{corollary \ref{cor:#1}}
+\newcommand{\figlabel}[1]{\label{fig:#1}}
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+
+% notations
+% (http://www.iam.ubc.ca/~newbury/tex/thesis.html#listofnotation)
+\newcommand{\listofnotations}[1]{\input{#1.tex}\clearpage}
+\newcommand{\addnotation}[3]{\rule{0pt}{3ex}\parbox[c]{9em}{$#1$}{#2}\dotfill\pageref{not:#3}\\}
+\newcommand{\notation}[1]{\label{not:#1}}
+
